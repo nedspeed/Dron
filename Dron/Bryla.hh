@@ -6,10 +6,15 @@
 class Bryla : public MacObr, Rysuj
 {
 protected:
+<<<<<<< HEAD
 MacObr orientacja; // mnozenie macierzy obrotu
 Wektor<double, ROZMIAR> srodek; // przesuniecie, dodawanie wektora
 int bryla;
 std::shared_ptr<drawNS::Draw3DAPI> gnuplot;
+=======
+virtual MacObr orientacja; // mnozenie macierzy obrotu
+virtual Wektor<double, ROZMIAR> srodek; // przesuniecie, dodawanie wektora
+>>>>>>> 9081d0f73d69f36d9927f19876dbc142c20f4eb9
 //nowe_wierzcholki = srodek + orientacja * stare_wierzcholki
 public:
 Rysuj(drawNS::Draw3DAPI*plot): gnuplot(plot){}
