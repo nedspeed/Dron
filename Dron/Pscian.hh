@@ -7,7 +7,7 @@ class Pscian : public Bryla
     protected:
  MacObr orientacja override; // mnozenie macierzy obrotu
  Wektor<double, ROZMIAR> srodek override; // przesuniecie, dodawanie wektora
- list<Wektor> wierzcholki override; 
+ list<Wektor> wierzcholki; 
 }
 
 #endif
