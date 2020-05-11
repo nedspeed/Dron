@@ -7,7 +7,6 @@ class Bryla : public MacObr
 protected:
 virtual MacObr orientacja; // mnozenie macierzy obrotu
 virtual Wektor<double, ROZMIAR> srodek; // przesuniecie, dodawanie wektora
-virtual list<Wektor> wierzcholki; // zbior wierzcholkow bryly
 //nowe_wierzcholki = srodek + orientacja * stare_wierzcholki
 };
 
