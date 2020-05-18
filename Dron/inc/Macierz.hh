@@ -20,7 +20,7 @@ class Macierz {
    */    
   Macierz<T, Wymiar>() = default; //domyslny konstruktor
   Macierz<T, Wymiar>( Wektor<T, Wymiar> kol[Wymiar] ); //konstruktor
-
+  Macierz<T, Wymiar>( Wektor<T, Wymiar>, Wektor<T, Wymiar>, Wektor<T, Wymiar> ); //konstruktor
   const Wektor<T, Wymiar> wez_wektor(const int &i)const; //pobiera wektor z macierzy
   const Wektor<T, Wymiar> & operator[] (int indeks) const; //przeciazenie indeksow dla macierzy typu const
   Wektor<T, Wymiar> & operator[] (int indeks); //przeciazenie indeksow dla macierzy dowolnego typu

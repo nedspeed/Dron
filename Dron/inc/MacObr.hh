@@ -5,9 +5,10 @@
 
 class MacObr : public Macierz<double, ROZMIAR>
 {
-
     public:
-MacObr(const Macierz<double, ROZMIAR> &M);
+explicit MacObr(const Macierz<double, ROZMIAR> &M);
+MacObr();
+MacObr(char os, double kat);
 };
 
 #endif

@@ -2,7 +2,7 @@
 #define WEKTOR_HH
 #include "rozmiar.h"
 #include <iostream>
-#include <cmath>
+#include <math.h>
 using namespace std;
 /*
  *  Tutaj trzeba opisac klase. Jakie pojecie modeluje ta klasa
@@ -21,8 +21,11 @@ T dane[Wymiar];
     dane[i] = 0;
   }
   Wektor<T, Wymiar>(T dane[Wymiar]); //konstruktor od kolekcji
+  Wektor<T, Wymiar>(double, double, double);
   T operator *(const Wektor<T, Wymiar> &W2) const;  //przeciazenie mnozenia wektor razy wektor
+  Wektor<T, Wymiar> operator /(const T &n) const; //przeciazenie dzielenia wektora przez liczbe
   Wektor<T, Wymiar> operator + (const Wektor<T, Wymiar> &W2) const; //przeciazenie dodawania wektorow
+  Wektor<T, Wymiar> operator + (const T &n) const;
   Wektor<T, Wymiar> operator - (const Wektor<T, Wymiar> &W2) const; //przeciazenie odejmowania wektorow
   const T & operator [] (int indeks) const; //przeciazenie operatora indeksowania dla wektora typu const
   T & operator [] (int indeks); //przeciazenie operatora indeksowania dla wektora dowolnego typu

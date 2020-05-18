@@ -15,6 +15,6 @@ public:
   virtual  ~Rysuj(){}
 
   virtual void rysuj_ksztalt()=0;
-
+  virtual void wymaz_ksztalt()=0;
 };
 #endif

@@ -7,7 +7,24 @@
  *  Mniejsze metody mozna definiwac w ciele klasy.
  */
 
-  
+    template <typename T, int Wymiar> 
+    Wektor<T, Wymiar> Wektor<T, Wymiar>::operator + (const T &n) const{
+      Wektor<T, Wymiar> wynik;
+      for( int i = 0; i < ROZMIAR; i++){
+        wynik[i] = this->dane[i] + n;
+      }
+      return wynik;
+    }
+
+  template <typename T, int Wymiar>
+  Wektor<T, Wymiar> Wektor<T,Wymiar>::operator / (const T &n) const{
+    Wektor<T, Wymiar> wynik;
+    for( int i = 0; i < ROZMIAR; i++){
+      wynik[i] = this->dane[i] / n;
+    }
+    return wynik;
+  }
+
 /*
  * Metoda przeciazajaca operacje
  * mnozenia wektora przez wektor.
