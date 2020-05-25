@@ -7,6 +7,19 @@
  *  Mniejsze metody mozna definiwac w ciele klasy.
  */
 
+
+
+  template<typename T, int Wymiar>
+  Point3D Wektor<T, Wymiar>::Wektor2Point(){
+
+    Point3D punkt(0, 0, 0);
+
+    for( int i =0; i < ROZMIAR; i++){
+      punkt[i] = dane[i];
+    }
+    return punkt;
+  }
+
     template <typename T, int Wymiar> 
     Wektor<T, Wymiar> Wektor<T, Wymiar>::operator + (const T &n) const{
       Wektor<T, Wymiar> wynik;

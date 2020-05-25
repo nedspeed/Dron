@@ -9,7 +9,7 @@ protected:
 
   std::shared_ptr<drawNS::Draw3DAPI> gnuplot;
 public:
-
+  Rysuj() {}
   Rysuj(drawNS::Draw3DAPI*plot):gnuplot(plot){}
 
   virtual  ~Rysuj(){}
