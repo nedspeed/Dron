@@ -8,7 +8,7 @@ class MacObr : public Macierz<double, ROZMIAR>
     public:
 explicit MacObr(const Macierz<double, ROZMIAR> &M);
 MacObr();
-MacObr(char os, double kat);
+MacObr orient(const char &os, const double &kat);
 };
 
 #endif

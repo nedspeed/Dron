@@ -36,20 +36,33 @@ void Pscian::przesun(const Wektor<double,3> &posuw)
 {
   
   Wektor<double,3> n;
+  Wektor<double,3> tmp = posuw;
+  int dzielnik = 450;
+  n = tmp/dzielnik;
   
+  for( int j = 0; j < dzielnik; j ++){
+
   for( int i = 0; i < 8; i++){
-    w[i] = w[i] + posuw;
+    w[i] = w[i] + n;
   }
   gnuplot -> erase_shape(br);
   this->rysuj_ksztalt();
+  gnuplot -> redraw();
+}
 }
 
 void Pscian::obroc(char os, double kat){
-  Macierz<double, ROZMIAR> orientacja = MacObr(os, kat);
+  cout << "bbbb";
+  Macierz<double,3> m;
+   MacObr orientacja;
+   orientacja = orientacja.orient(os,kat);
+  
   for( int i = 0; i < 8; i++){
-    w[i] = w[i] + orientacja * w[i];
+  w[i] = w[i] - srodek;
+  w[i] = orientacja * w[i];
+  w[i] = w[i] + srodek;
   } 
   gnuplot->erase_shape(br);
   this -> rysuj_ksztalt();
-
+  gnuplot -> redraw();
 }

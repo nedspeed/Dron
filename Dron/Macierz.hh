@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Wektor.hh"
+
 /*
  *  Tutaj trzeba opisac klase. Jakie pojecie modeluje ta klasa
  *  i jakie ma glowne cechy.
@@ -20,7 +21,7 @@ class Macierz {
    */    
   Macierz<T, Wymiar>() = default; //domyslny konstruktor
   Macierz<T, Wymiar>( Wektor<T, Wymiar> kol[Wymiar] ); //konstruktor
-  Macierz<T, Wymiar>( Wektor<T, Wymiar>, Wektor<T, Wymiar>, Wektor<T, Wymiar> ){} //konstruktor dla macObr
+  Macierz<T, Wymiar>( Wektor<T, Wymiar> v1, Wektor<T, Wymiar> v2, Wektor<T, Wymiar> v3){kol[0] = v1; kol[1]=v2; kol[2]=v3;} //konstruktor dla macObr
   const Wektor<T, Wymiar> wez_wektor(const int &i)const; //pobiera wektor z macierzy
   const Wektor<T, Wymiar> & operator[] (int indeks) const; //przeciazenie indeksow dla macierzy typu const
   Wektor<T, Wymiar> & operator[] (int indeks); //przeciazenie indeksow dla macierzy dowolnego typu

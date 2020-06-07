@@ -1,9 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include "Dr3D_gnuplot_api.hh"
-#include "Pscian.hh"
+#include "Dron.hh"
 #include "Woda.hh"
-
+#include "Dno.hh"
+#include "Gslup.hh"
+#include "Pscianprzeszkoda.hh"
 using std::vector;
 using drawNS::Point3D;
 using drawNS::APIGnuPlot3D;
@@ -54,32 +56,35 @@ int main() {
   cout << a << endl;
   
   std::shared_ptr<drawNS::Draw3DAPI> api (new APIGnuPlot3D(-10,10,-10,10,-10,10,-1));
-  api->change_ref_time_ms(0);
+  api->change_ref_time_ms(-1);
   Pscian p(api, a, b);
-  Woda v(api, fala);
-  v.rysuj_ksztalt();
+  //Woda v(api, fala);
+  //v.rysuj_ksztalt();
   p.rysuj_ksztalt();
   bool exit = 0;
+  
   while(!exit)
 {
   cin>>opcja;
   switch (opcja){
-  {
+  
   case 'r': //poruszanie sie
    cin >> dystans;
     p.przesun(dystans);
-   }
-    break;
-
+   break;
+  
     case 'o'://obrot
    cin>>os;
    cin>>kat;
    p.obroc(os, kat);
     break;
+  
 
+  
     case 'e':
     exit = 1;
     break;
+  
   }
 }
 p.wymaz_ksztalt();

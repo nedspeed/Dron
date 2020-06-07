@@ -1,19 +1,19 @@
-#ifndef WODA_HH
-#define WODA_HH
+#ifndef DNO_HH
+#define DNO_HH
 #include "Powierzchnia.hh"
 #include "Przeszkoda.hh"
 using std::vector;
 using std::shared_ptr;
 using drawNS::Draw3DAPI;
 
-class Woda : public Powierzchnia, public Przeszkoda
+class Dno : public Powierzchnia, public Przeszkoda
 {
  
  public:
- Woda(shared_ptr<Draw3DAPI>plot, vector<Wektor<double,3>>wierzcholki); //konstruktor
+ Dno(shared_ptr<Draw3DAPI>plot, vector<Wektor<double,3>>wierzcholki); //konstruktor
  void rysuj_ksztalt() override;
  void wymaz_ksztalt() override;
-    ~Woda() = default;
+    ~Dno() = default;
 };
 
 #endif

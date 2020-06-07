@@ -3,7 +3,7 @@
 #include "rozmiar.h"
 #include <iostream>
 #include "Dr3D_gnuplot_api.hh"
-#include <math.h>
+#include <cmath>
 using drawNS::Point3D;
 using namespace std;
 /*
@@ -23,7 +23,7 @@ T dane[Wymiar];
     dane[i] = 0;
   }
   Wektor<T, Wymiar>(T dane[Wymiar]); //konstruktor od kolekcji
-  Wektor<T, Wymiar>(T x, T y, T z){} //konstruktor dla macObr
+  Wektor<T, Wymiar>(T x, T y, T z){dane[0] = x; dane[1] = y; dane[2] = z;} //konstruktor dla macObr
   T operator *(const Wektor<T, Wymiar> &W2) const;  //przeciazenie mnozenia wektor razy wektor
   Wektor<T, Wymiar> operator /(const T &n) const; //przeciazenie dzielenia wektora przez liczbe
   Wektor<T, Wymiar> operator + (const Wektor<T, Wymiar> &W2) const; //przeciazenie dodawania wektorow

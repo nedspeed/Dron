@@ -1,7 +1,6 @@
 #include "Macierz.hh"
-#include <cmath>
 #include <complex>
-#define ERR 0.0000001
+#define ERR 0.0000000001
 /*
  *  Tutaj nalezy zdefiniowac odpowiednie metody
  *  klasy Macierz<T, Wymiar>, ktore zawieraja wiecej kodu
@@ -71,7 +70,7 @@ void Macierz<T, Wymiar>::Przekatna(int &z) {
 template <typename T, int Wymiar>
 void Macierz<T, Wymiar>::Gauss(T &det) {
     T s; //zmienna potrzebna przy zerowaniu wierszy
-    for (int j = 0; j < ROZMIAR - 1; j++) { //dla liczenia stalej matrix[i][j]/matrix[j][j]
+    for (int j = 0; j < ROZMIAR - 1; j++) { //dla liczenia stalej macierz[i][j]/macierz[j][j]
         if (abs(kol[j][j])>ERR) { //sprawdzenie aby uniknac dzielenia przez 0
             for (int i = j + 1; i < ROZMIAR; i++) { //porusza sie po wierszach
                 s = (kol[i][j] / kol[j][j]);
@@ -181,10 +180,12 @@ template <typename T, int Wymiar>
 template <typename T, int Wymiar> 
      Wektor<T, Wymiar> Macierz<T, Wymiar>::operator * (const Wektor<T, Wymiar> & W) const{
          Wektor<T, Wymiar> Wynik;
+         Macierz<T,Wymiar> tr;
+         tr = this->transpozycja();
       for( int i = 0; i < ROZMIAR; i++ ){
         for( int j = 0; j < ROZMIAR; j++)
 
-        Wynik[i] = this->kol[i][j] * W[j];
+        Wynik[i] += tr[i][j] * W[j];
         }
         return Wynik;
      }
@@ -209,10 +210,11 @@ template <typename T, int Wymiar>
  */
 template <typename T, int Wymiar> 
      ostream& operator << (ostream &Strm, const Macierz<T, Wymiar> &Mac){
+         Macierz<T,ROZMIAR> tmp = Mac.transpozycja();
          for ( int i = 0; i < ROZMIAR; i++ ){
            Strm << endl;
             for ( int j = 0; j < ROZMIAR; j++ ){
-                Strm << Mac[i][j];
+                Strm << tmp[i][j];
                 Strm << ' ';
             }}
             return Strm;
